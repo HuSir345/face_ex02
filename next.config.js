@@ -1,8 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   images: {
-    unoptimized: true
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.coze.cn'
+      },
+      {
+        protocol: 'https',
+        hostname: '*.imagehub.cc'
+      }
+    ]
+  },
+  experimental: {
+    outputFileTracingIncludes: {
+      '/**/*': ['./public/**/*']
+    }
   }
 }
 
