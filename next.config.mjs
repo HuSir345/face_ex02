@@ -4,16 +4,17 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.coze.cn'
+        hostname: '*.coze.cn'
       },
       {
         protocol: 'https',
-        hostname: '**.imagehub.cc'
+        hostname: '*.imagehub.cc'
       }
     ]
   },
+  swcMinify: false,
   experimental: {
-    serverActions: true
+    forceSwcTransforms: true
   }
 }
 
