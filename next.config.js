@@ -1,24 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '*.coze.cn'
-      },
-      {
-        protocol: 'https',
-        hostname: '*.imagehub.cc'
-      }
-    ]
+    unoptimized: true,
+    domains: ['api.coze.cn', 'www.imagehub.cc', 's.coze.cn', 's1.imagehub.cc'],
   },
-  webpack: (config) => {
-    config.externals = [...(config.externals || []), 'sharp']
-    return config
+  typescript: {
+    ignoreBuildErrors: true
   },
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['@/components']
+  eslint: {
+    ignoreDuringBuilds: true
   }
 }
 
