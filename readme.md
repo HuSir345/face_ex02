@@ -51,33 +51,7 @@
    - 交互反馈
 
 ## 环境变量
-Authorization=pat_0OjgQdYOMeEPHi3wUdDvZCLjaLOgbS87dDYMVdoxFQO9iYWuaamgn5pqrHKhlig2
-COZE_API_URL=https://api.coze.cn/v1/workflow/run
-workflow_id=7435930213924306978
 
-调用coze接口代码：
-1，接口文档地址：@https://www.coze.cn/docs/developer_guides/workflow_run 。
-2，请求地址：@https://api.coze.cn/v1/workflow/run 。
-3，Authorization=pat_0OjgQdYOMeEPHi3wUdDvZCLjaLOgbS87dDYMVdoxFQO9iYWuaamgn5pqrHKhlig2 。
-4，workflow_id=7435930213924306978 。
-5，请求示例：curl --location --request POST 'https://api.coze.cn/v1/workflow/run' \
---header 'Authorization: Bearer pat_hfwkehfncaf****' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "workflow_id": "73664689170551*****",
-    "parameters": {
-        "user_id":"12345",
-        "user_name":"George"
-    }
-}'
-6，返回示例：{
-    "code": 0,
-    "cost": "0",
-    "data": "{\"output\":\"北京的经度为116.4074°E，纬度为39.9042°N。\"}",
-    "debug_url": "https://www.coze.cn/work_flow?execute_id=741364789030728****&space_id=736142423532160****&workflow_id=738958910358870****",
-    "msg": "Success",
-    "token": 98
-}
 
 ## 注意事项
 
