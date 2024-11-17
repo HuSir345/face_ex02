@@ -1,8 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['api.coze.cn', 'www.imagehub.cc', 's.coze.cn', 's1.imagehub.cc'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.coze.cn'
+      },
+      {
+        protocol: 'https',
+        hostname: '*.imagehub.cc'
+      }
+    ]
   },
+  webpack: (config) => {
+    config.externals = [...(config.externals || []), 'sharp']
+    return config
+  },
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['@/components']
+  }
 }
 
 module.exports = nextConfig 
